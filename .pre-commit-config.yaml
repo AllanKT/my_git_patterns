@@ -12,7 +12,7 @@ repos:
     hooks:
       - id: black
         exclude: tests/
-        args: [--check]
+        # args: [--check]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
@@ -59,6 +59,11 @@ repos:
     - id: mypy
       # files: ^src/
       # args: []
+
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+    - id: gitlint
 
   # - repo: local
   #     hooks:
