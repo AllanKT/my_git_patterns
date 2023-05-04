@@ -12,15 +12,34 @@ repos:
     hooks:
       - id: black
         exclude: tests/
-        # args: [--check]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
       - id: trailing-whitespace
-      # - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
+
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.1.1
+    hooks:
+    - id: autoflake
+      args: [--in-place, --remove-all-unused-imports]
+      additional_dependencies: [
+          'flake8-blind-except',
+          'flake8-deprecated',
+          'flake8-string-format',
+          'flake8-bugbear',
+          'flake8-comprehensions',
+          'flake8-implicit-str-concat',
+          'pydocstyle>=5.0.0',
+          'flake8-pep3101',
+          'flake8-polyfill',
+          # 'flake8-coding',
+          # 'flake8-print',
+          # 'flake8-docstrings',
+          # 'flake8-quotes',
+      ]
 
   - repo: https://github.com/PyCQA/flake8
     rev: 6.0.0
@@ -29,12 +48,18 @@ repos:
       # args: [--ignore=D100,D103,E902]
       additional_dependencies: [
           'flake8-blind-except',
-          'flake8-docstrings',
+          'flake8-deprecated',
+          'flake8-string-format',
           'flake8-bugbear',
           'flake8-comprehensions',
-          'flake8-docstrings',
           'flake8-implicit-str-concat',
           'pydocstyle>=5.0.0',
+          'flake8-pep3101',
+          'flake8-polyfill',
+          # 'flake8-coding',
+          # 'flake8-print',
+          # 'flake8-docstrings',
+          # 'flake8-quotes',
       ]
 
   # Tool for automatically reordering python imports. Similar to isort but uses static analysis more.
