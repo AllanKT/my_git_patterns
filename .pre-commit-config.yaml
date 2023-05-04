@@ -88,6 +88,17 @@ repos:
     - id: gitlint
 
   # - repo: local
+  #   hooks:
+  #   - id: custom-script-file
+  #     name: custom-script-file
+  #     # entry: bash -c 'git status'
+  #     entry:  bash -c 'git log $(git merge-base main develop) develop --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit >> pwd/message.txt'
+  #     # entry: git log $(git merge-base main develop) develop --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit >> message.txt
+  #     language: system
+  #     # types: [python]
+  #     # pass_filenames: false
+
+  # - repo: local
   #     hooks:
   #       - id: pylint
   #         name: pylint
@@ -101,21 +112,3 @@ repos:
   #         language: system
   #         always_run: true
   #         pass_filenames: false
-
-
-# name: pre-commit
-
-# on:
-#   pull_request:
-#   push:
-#     branches: [main]
-
-# jobs:
-#   pre-commit:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v3
-#       with:
-#         ref: ${{ github.head_ref }}
-#     - uses: actions/setup-python@v3
-#     - uses: pre-commit/action@v3.0.0
