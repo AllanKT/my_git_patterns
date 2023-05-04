@@ -35,11 +35,19 @@ repos:
   #     - id: debug-statements
   #         language_version: python3
 
-  # - repo: https://github.com/PyCQA/flake8
-  #     rev: 3.9.2
+  # - repo: https://github.com/pycqa/flake8
+  #     rev: 6.0.0
   #     hooks:
   #     - id: flake8
-  #         language_version: python3
+  #       additional_dependencies: [
+  #           'flake8-blind-except',
+  #           'flake8-docstrings',
+  #           'flake8-bugbear',
+  #           'flake8-comprehensions',
+  #           'flake8-docstrings',
+  #           'flake8-implicit-str-concat',
+  #           'pydocstyle>=5.0.0',
+  #       ]
 
   # - repo: https://github.com/asottile/reorder_python_imports
   #     rev: v2.6.0
