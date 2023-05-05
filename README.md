@@ -43,5 +43,6 @@ C:\Program Files\Git\etc\gitconfig
 	pcr = "!pre-commit run --all-files -v --show-diff-on-failure"
 
 	alias = "!echo '\n• pc \t\t get template from pre-commit\n• gst \t\t status\n• ps \t\t add/commit/push complete\n• pl \t\t fetch and pull in this branch\n• lg \t\t get all logs betwenn this branch and main\n'"
+	path = "!echo \"${PROGRAMFILES}/Git/etc/gitconfig\""
 
 ```
