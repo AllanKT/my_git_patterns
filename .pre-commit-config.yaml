@@ -86,29 +86,3 @@ repos:
     rev: v0.19.1
     hooks:
     - id: gitlint
-
-  # - repo: local
-  #   hooks:
-  #   - id: custom-script-file
-  #     name: custom-script-file
-  #     # entry: bash -c 'git status'
-  #     entry:  bash -c 'git log $(git merge-base main develop) develop --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit >> pwd/message.txt'
-  #     # entry: git log $(git merge-base main develop) develop --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit >> message.txt
-  #     language: system
-  #     # types: [python]
-  #     # pass_filenames: false
-
-  # - repo: local
-  #     hooks:
-  #       - id: pylint
-  #         name: pylint
-  #         entry: poetry run pylint app/
-  #         language: system
-  #         always_run: true
-  #         pass_filenames: false
-  #       - id: create requirements
-  #         name: create requirements
-  #         entry: sh write_requirements.sh
-  #         language: system
-  #         always_run: true
-  #         pass_filenames: false
