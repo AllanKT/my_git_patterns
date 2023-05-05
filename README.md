@@ -39,4 +39,3 @@ C:\Program Files\Git\etc\gitconfig
 
 	alias = "!echo '\n• pc \t\t get template from pre-commit\n• gst \t\t status\n• ps \t\t add/commit/push complete\n• pl \t\t fetch and pull in this branch\n• lg \t\t get all logs betwenn this branch and main\n'"
 ```
-
