@@ -25,3 +25,28 @@ mkdocstrings-python = "^1.9.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+docs = "mkdocs serve" # server da documentação
+lint = "blue --check --diff . && isort --check --diff ." # checa o codigo sobre lint e ordenação de imports
+pre_test = "task lint" # validar o lint antes do test
+test = "pytest -s -x --cov=project_base -vv" # executa o teste e gera o arquivo de coverage
+post_test = "coverage html" # gera o arquivo de coverage se o test der OK
+
+pc = "cp \"${PROGRAMFILES}/Git/etc/.pre-commit-config.yaml\" ./"
+st = "git status --short --branch"
+ft = "git fetch origin"
+ps = "git add . && git commit -am \"$1: $2\nRefs: [$3]\" && git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\" && :"
+pl = "git fetch origin $(git rev-parse --abbrev-ref HEAD) && git pull origin $(git rev-parse --abbrev-ref HEAD)"
+pcc = "!pre-commit clean"
+pci = "!pre-commit install"
+pca = "!pre-commit autoupdate"
+pcr = "!pre-commit run --all-files -v --show-diff-on-failure"

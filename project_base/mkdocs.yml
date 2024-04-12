@@ -1,0 +1,16 @@
+site_name: My Paterns
+repo_url: https://github.com/AllanKT/my_git_patterns
+repo_name: Meus padrões de projeto
+edit_uri: tree/main/docs
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+markdown_extensions:
+  - attr_list
+
+extra_css:
+  - stylesheets/extra.css
